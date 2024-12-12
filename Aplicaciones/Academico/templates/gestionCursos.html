@@ -1,0 +1,73 @@
+{% extends "./base.html" %}
+
+{% block title %} Gestión de Cursos {% endblock %}
+
+{% block body %}
+
+<style>
+    /* Centrar la tabla en el contenedor */
+.table-responsive {
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Alinear texto dentro de la tabla */
+.table thead th,
+.table tbody td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Ajustar encabezados */
+.table thead th {
+    background-color: #343a40; /* Color oscuro para encabezados */
+    color: white;
+}
+
+/* Margen adicional alrededor de la tabla */
+.table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Para pantallas pequeñas, asegurarse de que sea responsiva */
+@media (max-width: 768px) {
+    .table-responsive {
+        padding: 0 10px;
+    }
+}
+
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10 col-xl-8">
+        <h1 class="text-center">Listado de Cursos</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped text-center"> <!-- Clase para centrar contenido -->
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Créditos</th>
+                        <th>Profesor</th>
+                        <th>Periodo de Inscripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in cursos %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ c.codigo }}</td>
+                        <td>{{ c.nombre }}</td>
+                        <td>{{ c.creditos }}</td>
+                        <td>{{ c.profesor }}</td>
+                        <td>{{ c.periodo_inscripcion }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

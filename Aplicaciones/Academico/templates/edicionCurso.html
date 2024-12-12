@@ -1,0 +1,46 @@
+{% extends "./base.html" %}
+
+{% block title %} Edición de Curso {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Edición de Curso</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarCurso/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="txtCodigo" name="txtCodigo" value="{{curso.codigo}}" class="form-control"
+                            placeholder="Código" minlength="6" maxlength="6" readonly required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" value="{{curso.nombre}}" class="form-control"
+                            placeholder="Nombre" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="numCreditos" name="numCreditos" value="{{curso.creditos}}"
+                            class="form-control" min="1" max="9" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtProfesor" name="txtProfesor" value="{{curso.profesor}}"
+                            class="form-control" placeholder="Profesor" maxlength="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaInicioInscripcion">Fecha Inicio Inscripción</label>
+                        <input type="date" id="fechaInicioInscripcion" name="fechaInicioInscripcion"
+                            value="{{ fecha_inicio_inscripcion }}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFinInscripcion">Fecha Fin Inscripción</label>
+                        <input type="date" id="fechaFinInscripcion" name="fechaFinInscripcion"
+                            value="{{ fecha_fin_inscripcion }}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

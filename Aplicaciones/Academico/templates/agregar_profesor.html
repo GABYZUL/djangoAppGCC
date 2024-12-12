@@ -1,0 +1,24 @@
+<!-- agregar_profesor.html -->
+{% extends "base.html" %}
+
+{% block title %}Agregar Profesor{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Agregar Nuevo Profesor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="txtNombre" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="txtTelefono">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Agregar Profesor</button>
+    </form>
+</div>
+{% endblock %}

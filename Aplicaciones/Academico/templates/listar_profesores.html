@@ -1,0 +1,31 @@
+<!-- listar_profesores.html -->
+{% extends "base.html" %}
+
+{% block title %}Lista de Profesores{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Lista de Profesores</h2>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Cursos Asignados</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profesor in profesores %}
+            <tr>
+                <td>{{ profesor.nombre }}</td>
+                <td>{{ profesor.telefono }}</td>
+                <td>{{ profesor.cursos_asignados }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="agregar_profesor" class="btn btn-primary">Agregar Profesor</a>
+</div>
+{% endblock %}

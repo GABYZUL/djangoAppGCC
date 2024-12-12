@@ -1,0 +1,41 @@
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+/* Asegúrate de que el body tenga márgenes y padding pequeños */
+.row {
+    margin: 0px;
+    padding: 0;
+}
+
+/* Modificar el contenedor principal para que ocupe más espacio */
+.container {
+    max-width: 95%;  /* Aumenta el ancho del contenedor */
+    margin: 0 auto;  /* Eliminar márgenes laterales */
+    padding: 20px;  /* Espaciado interno para que no se pegue al borde */
+}
+
+/* Opcional: Puedes reducir el padding del contenedor de tablas */
+.table-responsive {
+    padding: 0;
+}
+
+/* Reducir los márgenes de la tabla para que ocupe más espacio */
+.table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Ajustar márgenes y espaciados de las celdas */
+th, td {
+    padding: 12px;  /* Puedes reducir el padding aquí si quieres más espacio */
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Modificar la barra de navegación para que ocupe todo el ancho disponible */
+.navbar {
+    margin: 0;
+    padding: 10px 20px;  /* Ajuste del padding de la navbar */
+}
